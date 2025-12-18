@@ -54,47 +54,44 @@ main {
 /* Top Quote Container */
 .top-quote-container {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 600px;
-  padding: 0 20px;
+  
   z-index: 20;
   text-align: left;
   pointer-events: none; /* Let clicks pass through */
 }
 
-/* Shiny Catchy Animation Keyframes */
-@keyframes shine {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
 .top-quote-text {
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.5;
   font-weight: 600;
   margin: 0;
   font-style: italic;
   
-  /* Shiny Gradient Configuration */
-  background: linear-gradient(
-    90deg, 
-    rgba(255, 255, 255, 0.4) 0%, 
-    rgba(255, 255, 255, 1) 50%, 
-    rgba(255, 255, 255, 0.4) 100%
-  );
-  background-size: 200% auto;
-  color: #fff; /* Fallback */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Glow Effect Base Styles */
+  color: #FFF; /* Bright white core */
+  opacity: 0; /* Initial state for animation */
   
-  /* Animation & Glow */
-  animation: shine 4s linear infinite;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  /* The Fire/Glow Effect Initial State */
+  text-shadow:
+    0 0 2px #63ff33,
+    0 0 5px #25b42c,
+    0 0 10px #ff8800,
+    0 0 20px #ff4400,
+    0 0 40px #ff0000;
 }
+
+.top-quote-text.attribution {
+  color: #ffdcb4;
+  text-shadow:
+      0 0 2px #ffcc00,
+      0 0 7px #ff6600;
+}
+
 
 /* Center Group Wrapper */
 .center-group {
@@ -144,18 +141,20 @@ main {
   stroke: #ffffff;
   stroke-width: 0.7px;
   font-family: var(--font-atkinson), 'Inter', sans-serif;
-  font-size: 26px;
+  font-size: 2.5rem;
   letter-spacing: 0.06em;
 }
 
 /* Responsive Text */
 @media (max-width: 768px) {
   #tagline-svg text, #tagline-svg .tag-char { font-size: 20px; letter-spacing: 0.05em; }
-  .top-quote-text { font-size: 11px; } /* Slightly smaller on mobile */
+  .top-quote-text { font-size: 13px; } /* Slightly smaller on mobile */
 }
 @media (max-width: 480px) {
-  #tagline-svg text, #tagline-svg .tag-char { font-size: 18px; letter-spacing: 0.04em; }
+  #tagline-svg text, #tagline-svg .tag-char { font-size: 2.5rem; letter-spacing: 0.04em; }
+  .top-quote-container { padding: 0 20px; }
 }
+
 
 /* Logo Animation Elements */
 .anim-element {
