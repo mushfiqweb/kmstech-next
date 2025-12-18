@@ -1,0 +1,149 @@
+<style>
+    /* Container for the quote */
+    .quote-container {
+        max-width: 1000px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* The specific style to match the 'effect.jpg' reference 
+           - White/Cream core
+           - Strong Orange/Gold Glow
+        */
+    .glow-text {
+        color: #FFF;
+        /* Bright white core */
+        text-transform: uppercase;
+        line-height: 1.4;
+        letter-spacing: 2px;
+        /* Initial state for animation */
+        opacity: 0;
+        transform: translateY(30px);
+
+        /* The Fire/Glow Effect */
+        text-shadow:
+            0 0 5px #fff,
+            /* Inner White Glow */
+            0 0 10px #ffcc00,
+            /* Yellow Halo */
+            0 0 20px #ff8800,
+            /* Orange Mid */
+            0 0 40px #ff4400,
+            /* Red/Orange Outer */
+            0 0 80px #ff0000;
+        /* Deep Red Ambient */
+    }
+
+    /* Typography Hierarchy */
+    .line-1 {
+        font-size: clamp(0.5rem, 2vw, 1rem);
+        /* Responsive font size */
+        margin-bottom: 10px;
+    }
+
+    .line-2 {
+        font-size: clamp(0.5rem, 2vw, 1rem);
+        color: #ffeebb;
+        /* Slightly warmer core for emphasis */
+        margin-bottom: 15px;
+    }
+
+    .line-3 {
+        font-size: clamp(0.5rem, 2vw, 1rem);
+        margin-bottom: 30px;
+    }
+
+    .attribution {
+        font-size: clamp(1rem, 2.5vw, 1.8rem);
+        margin-top: 40px;
+        color: #ffdcb4;
+        /* Slightly softer glow for the signature */
+        text-shadow:
+            0 0 5px #ffcc00,
+            0 0 15px #ff6600;
+    }
+
+    /* Background texture (Optional: adds depth like the forest bg in reference) */
+    .bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        z-index: 0;
+        pointer-events: none;
+        filter: blur(4px);
+    }
+
+    /* Accessibility: Reduce motion preference */
+    @media (prefers-reduced-motion: reduce) {
+
+        .glow-text,
+        .attribution {
+            animation: none;
+            transition: none;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    }
+</style>
+
+
+<div class="quote-container" aria-label="Quote by the Holy Prophet">
+    <div class="glow-text line-1">
+        God, His angels and all those in heavens and on earth,
+    </div>
+    <div class="glow-text line-2">
+        even ants in their hills and fish in the water,
+    </div>
+    <div class="glow-text line-3">
+        call down blessings on those who instruct others in beneficial knowledge.
+    </div>
+    <div class="glow-text attribution">
+        ~ (Holy Prophet, The Merciful SAW)
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // GSAP Timeline for sequence
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        // 1. Entrance Animation
+        // Staggers the lines appearing from below with a fade-in
+        tl.to(".glow-text", {
+            duration: 1.5,
+            y: 0,
+            opacity: 1,
+            stagger: 0.4, // Delay between each line
+        });
+
+        // 2. Continuous Pulse Animation (The "Glow" breathing effect)
+        // This makes the text feel alive/fiery
+        gsap.to(".glow-text", {
+            textShadow: `
+                    0 0 10px #fff,
+                    0 0 20px #ffdd00,
+                    0 0 40px #ffaa00,
+                    0 0 60px #ff5500,
+                    0 0 90px #ff0000
+                `,
+            repeat: -1, // Infinite
+            yoyo: true, // Go back and forth
+            duration: 2,
+            ease: "sine.inOut"
+        });
+
+        // Subtle floating movement for the container to add depth
+        gsap.to(".quote-container", {
+            y: -10,
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    });
+</script>

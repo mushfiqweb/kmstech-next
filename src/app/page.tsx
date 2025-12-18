@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { MainLogo } from '@/components/MainLogo';
 import { SVGLayer } from '@/components/SVGLayer';
 import { Modal } from '@/components/Modal';
+import { TopQuote } from '@/components/TopQuote';
 
 // --- MAIN APP COMPONENT ---
 
@@ -119,12 +120,7 @@ export default function App() {
         <SVGLayer />
         
         {/* Top Quote Section - Aligned with Logo */}
-        <div className="top-quote-container">
-            <p className="top-quote-text">God, His angels and all those in heavens and on earth</p>
-            <p className="top-quote-text">even ants in their hills and fish in the water</p>
-            <p className="top-quote-text">call down blessings on those who instruct others in beneficial knowledge</p>
-            <p className="top-quote-text" style={{ textAlign: 'right', marginTop: '4px' }}>~ (Holy Prophet, The Merciful SAW)</p>
-        </div>
+        <TopQuote />
 
         <div className="center-group">
             <MainLogo />
