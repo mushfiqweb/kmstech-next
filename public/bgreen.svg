@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 679.34 151.63">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        letter-spacing: .2em;
+      }
+
+      .cls-1, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #2dcc93;
+      }
+
+      .cls-4 {
+        letter-spacing: .12em;
+      }
+
+      .cls-6 {
+        stroke: #65c8d0;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        letter-spacing: .2em;
+      }
+
+      .cls-7 {
+        font-family: Aileron-UltraLight, Aileron;
+        font-size: 70px;
+        font-weight: 100;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <circle class="cls-6" cx="393.34" cy="75.81" r="75.31"/>
+    <text class="cls-7" transform="translate(0 104.47)"><tspan class="cls-1" x="0" y="0">BENE</tspan><tspan class="cls-4" x="219.66" y="0">A</tspan><tspan class="cls-5" x="270.9" y="0">TH</tspan><tspan class="cls-3" x="385.35" y="0"> </tspan><tspan class="cls-1" x="412.23" y="0">G</tspan><tspan class="cls-2" x="474.8" y="0">REEN</tspan></text>
+  </g>
+</svg>

@@ -28,6 +28,10 @@ export const MainLogo = () => {
     // Animation Timeline
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
+    // Set initial will-change to optimize rendering
+    gsap.set(container, { willChange: "transform, opacity" });
+    gsap.set(elements, { willChange: "stroke-dashoffset, opacity, fill-opacity, stroke-opacity" });
+
     tl.from(container, {
       duration: 1,
       opacity: 0,

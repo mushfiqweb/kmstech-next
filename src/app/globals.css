@@ -20,8 +20,10 @@ body {
 }
 
 body {
-  color: white; /* Changed from var(--foreground) to match page.tsx */
-  background-color: var(--bg-dark); /* Changed from var(--background) */
+  color: white;
+  /* Changed from var(--foreground) to match page.tsx */
+  background-color: var(--bg-dark);
+  /* Changed from var(--background) */
   font-family: var(--font-atkinson), 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,7 +46,7 @@ main {
   place-items: center;
   min-height: 100vh;
   /* Use dvh for mobile browsers with dynamic toolbars */
-  min-height: 100dvh; 
+  min-height: 100dvh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -59,10 +61,12 @@ main {
   transform: translateX(-50%);
   width: 100%;
   max-width: 600px;
-  
+
   z-index: 20;
   text-align: left;
-  pointer-events: none; /* Let clicks pass through */
+  /* pointer-events: none;  Let clicks pass through - Removed to allow hover detection */
+  cursor: none;
+  /* Hide cursor on hover */
 }
 
 .top-quote-text {
@@ -71,25 +75,34 @@ main {
   font-weight: 600;
   margin: 0;
   font-style: italic;
-  
+
   /* Glow Effect Base Styles */
-  color: #FFF; /* Bright white core */
-  opacity: 0; /* Initial state for animation */
-  
-  /* The Fire/Glow Effect Initial State */
+  color: #FFF;
+  /* Bright white core */
+  /* opacity: 0; Removed - controlled by GSAP on parent or defaults to 1 */
+
+  /* The Fire/Glow Effect Initial State - Reduced Intensity (50% less blur) */
   text-shadow:
-    0 0 2px #63ff33,
-    0 0 5px #25b42c,
-    0 0 10px #ff8800,
-    0 0 20px #ff4400,
-    0 0 40px #ff0000;
+    0 0 1px #63ff33,
+    0 0 2px #25b42c,
+    0 0 3.5px #ff3c009d,
+    0 0 7px #ff44008c,
+    0 0 14px #ff000088;
 }
 
 .top-quote-text.attribution {
   color: #ffdcb4;
   text-shadow:
-      0 0 2px #ffcc00,
-      0 0 7px #ff6600;
+    0 0 0.5px #ffcc00,
+    0 0 2.5px #ff6600;
+}
+
+.glow-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
 }
 
 
@@ -147,18 +160,38 @@ main {
 
 /* Responsive Text */
 @media (max-width: 768px) {
-  #tagline-svg text, #tagline-svg .tag-char { font-size: 20px; letter-spacing: 0.05em; }
-  .top-quote-text { font-size: 13px; } /* Slightly smaller on mobile */
+
+  #tagline-svg text,
+  #tagline-svg .tag-char {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .top-quote-text {
+    font-size: 13px;
+  }
+
+  /* Slightly smaller on mobile */
 }
+
 @media (max-width: 480px) {
-  #tagline-svg text, #tagline-svg .tag-char { font-size: 2.5rem; letter-spacing: 0.04em; }
-  .top-quote-container { padding: 0 20px; }
+
+  #tagline-svg text,
+  #tagline-svg .tag-char {
+    font-size: 2.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .top-quote-container {
+    padding: 0 20px;
+  }
 }
 
 
 /* Logo Animation Elements */
 .anim-element {
-  fill-opacity: 0; /* Starts hidden, revealed by GSAP */
+  fill-opacity: 0;
+  /* Starts hidden, revealed by GSAP */
   stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 0.25px;
   stroke-linecap: round;
@@ -170,19 +203,25 @@ main {
 .content-stack {
   position: absolute;
   /* max handles iPhone home bar area */
-  bottom: max(10px, env(safe-area-inset-bottom)); 
+  bottom: max(10px, env(safe-area-inset-bottom));
   width: 100%;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center;    /* Center items horizontally */
-  gap: 2px;              /* Consistent spacing for EVERYTHING - reduced */
-  opacity: 0; 
-  animation: fadeIn 1s ease-out forwards 3.5s; /* Delay to appear after logo anim */
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  gap: 2px;
+  /* Consistent spacing for EVERYTHING - reduced */
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 3.5s;
+  /* Delay to appear after logo anim */
   z-index: 20;
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .nav-link {
@@ -191,13 +230,15 @@ main {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-family: var(--font-atkinson), sans-serif;
-  font-size: 13px; /* Reduced from 15px */
+  font-size: 13px;
+  /* Reduced from 15px */
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 4px 12px; /* Reduced vertical padding */
+  padding: 4px 12px;
+  /* Reduced vertical padding */
   position: relative;
   width: fit-content;
 }
@@ -227,9 +268,11 @@ main {
 /* Footer Text Styles (now part of the stack) */
 .footer-copyright {
   color: #ffffff;
-  font-size: 12px; /* Reduced from 14px */
+  font-size: 12px;
+  /* Reduced from 14px */
   font-weight: 600;
-  padding: 2px 12px; /* Reduced vertical padding */
+  padding: 2px 12px;
+  /* Reduced vertical padding */
   margin: 0;
   display: block;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
@@ -239,31 +282,46 @@ main {
 .trade-license {
   display: block;
   text-align: center;
-  padding: 0px 12px; /* Reduced vertical padding */
+  padding: 0px 12px;
+  /* Reduced vertical padding */
 }
 
 .trade-license span {
   color: #ffffff;
   font-weight: 600;
-  font-size: 10px; /* Reduced from 12px */
+  font-size: 10px;
+  /* Reduced from 12px */
   animation: glowAlternate 20s ease-in-out infinite alternate;
 }
 
 @keyframes glowAlternate {
-  0% { text-shadow: 0 0 1px #ff0000; color: #ffcccc; }
-  50% { text-shadow: 0 0 1px #ffff00; color: #ffffcc; }
-  100% { text-shadow: 0 0 1px #00ff00; color: #ccffcc; }
+  0% {
+    text-shadow: 0 0 1px #ff0000;
+    color: #ffcccc;
+  }
+
+  50% {
+    text-shadow: 0 0 1px #ffff00;
+    color: #ffffcc;
+  }
+
+  100% {
+    text-shadow: 0 0 1px #00ff00;
+    color: #ccffcc;
+  }
 }
 
 /* Responsive Spacing */
 @media (max-width: 768px) {
   .content-stack {
-    gap: 4px; /* Tighter gap on mobile for all items */
+    gap: 4px;
+    /* Tighter gap on mobile for all items */
     padding: 0 20px;
   }
 
   .nav-link {
-    font-size: 12px; /* Reduced font size mobile */
+    font-size: 12px;
+    /* Reduced font size mobile */
     padding: 3px 10px;
   }
 }
@@ -303,7 +361,7 @@ main {
   flex-direction: column;
   transform: scale(0.9) translateY(20px);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .modal-overlay.active .modal-container {
@@ -344,7 +402,7 @@ main {
 }
 
 .modal-content {
-  padding: 32px;
+  padding: 0px 30px 0px 30px;
   overflow-y: auto;
   font-size: 16px;
   line-height: 1.7;
@@ -352,9 +410,18 @@ main {
 }
 
 /* Custom Scrollbar */
-.modal-content::-webkit-scrollbar { width: 8px; }
-.modal-content::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
-.modal-content::-webkit-scrollbar-thumb { background: rgba(0, 148, 68, 0.6); border-radius: 4px; }
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 148, 68, 0.6);
+  border-radius: 4px;
+}
 
 /* Content Styling */
 .about-section h2 {
@@ -362,14 +429,27 @@ main {
   margin: 24px 0 16px;
   font-size: 20px;
 }
-.about-section p { margin-bottom: 16px; text-align: justify; }
-.about-section strong { color: var(--primary-green); }
-.about-section ul { padding-left: 20px; list-style: none; }
-.about-section li { 
-  position: relative; 
-  padding-left: 20px; 
+
+.about-section p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.about-section strong {
+  color: var(--primary-green);
+}
+
+.about-section ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.about-section li {
+  position: relative;
+  padding-left: 20px;
   margin-bottom: 8px;
 }
+
 .about-section li::before {
   content: '';
   position: absolute;
@@ -381,9 +461,35 @@ main {
   border-radius: 50%;
 }
 
+/* Hover Animation for Mission/Vision Lists */
+.hover-list li {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: default;
+}
+
+.hover-list li:hover {
+  transform: translateX(5px);
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 212, 102, 0.5);
+}
+
+.hover-list li:hover::before {
+
+  box-shadow: 0 0 5px var(--primary-green), 0 0 20px var(--primary-green);
+  transform: scale(1.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 /* Contact Form */
-.form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-input, textarea {
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+input,
+textarea {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
@@ -392,7 +498,13 @@ input, textarea {
   font-family: inherit;
   width: 100%;
 }
-input:focus, textarea:focus { outline: 2px solid var(--primary-green); border-color: transparent; }
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-green);
+  border-color: transparent;
+}
+
 .btn-submit {
   background: var(--primary-green);
   color: white;
@@ -403,7 +515,10 @@ input:focus, textarea:focus { outline: 2px solid var(--primary-green); border-co
   cursor: pointer;
   transition: transform 0.2s;
 }
-.btn-submit:hover { transform: translateY(-2px); }
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+}
 
 /* Quote Container Animation */
 .quote-container {
@@ -416,10 +531,66 @@ input:focus, textarea:focus { outline: 2px solid var(--primary-green); border-co
 }
 
 .glow-text {
-  opacity: 0; /* Handled by GSAP */
+  opacity: 0;
+  /* Handled by GSAP */
 }
 
 @media (max-width: 600px) {
-  .modal-container { width: 95%; max-height: 90vh; }
-  .modal-content { padding: 20px; }
+  .modal-container {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+/* Concerns Logos */
+.concerns-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.concern-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.concern-link:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.concern-logo {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Optional rounded corners */
+}
+
+.logo-fallback {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .concerns-logos {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

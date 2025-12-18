@@ -5,63 +5,106 @@ import gsap from 'gsap';
 
 export const TopQuote = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const glowRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+
+  const quoteLines = [
+    "God, His angels and all those in heavens and on earth,",
+    "even ants in their hills and fish in the water,",
+    "call down blessings on those who instruct others in beneficial knowledge."
+  ];
+
+  const attribution = "~ (Holy Prophet, The Merciful SAW)";
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const texts = textRefs.current.filter(Boolean);
+    const lines = lineRefs.current.filter(Boolean);
+    const glows = glowRefs.current.filter(Boolean);
 
-    // Initial state (handled by CSS primarily, but enforcing here ensures consistency)
-    gsap.set(texts, { 
-      opacity: 0, 
-      y: 30 
+    // Initial state for entrance animation
+    gsap.set(lines, {
+      opacity: 0,
+      y: 30,
+      willChange: "transform, opacity"
+    });
+
+    // Initial state for glow pulse (starts invisible)
+    gsap.set(glows, {
+      opacity: 0,
+      willChange: "opacity"
     });
 
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // 1. Entrance Animation
-    tl.to(texts, {
+    // 1. Entrance Animation (Moves the whole line container)
+    tl.to(lines, {
       duration: 1.5,
       y: 0,
       opacity: 1,
       stagger: 0.4,
     });
 
-    // 2. Continuous Pulse Animation (The "Glow" breathing effect)
-    gsap.to(texts, {
-      textShadow: `
-        0 0 5px #11ff90ff,
-        0 0 10px #21b90dff,
-        0 0 20px #ffaa00,
-        0 0 30px #ff5500,
-        0 0 45px #ff0000
-      `,
+    // 2. Continuous Glow Pulse (The missing piece!)
+    // gsap.to(glows, {
+    //   opacity: 0.5,
+    //   duration: 2.5,
+    //   repeat: -1,
+    //   yoyo: true,
+    //   ease: "sine.inOut",
+    //   stagger: {
+    //     each: 0.3,
+    //     from: "start" 
+    //   }
+    // });
+
+
+    // Subtle floating movement for the container
+    gsap.to(containerRef.current, {
+      y: -10,
+      duration: 4,
       repeat: -1,
       yoyo: true,
-      duration: 2,
-      ease: "sine.inOut"
+      ease: "sine.inOut",
+      willChange: "transform"
     });
 
     return () => {
       tl.kill();
-      gsap.killTweensOf(texts);
+      gsap.killTweensOf(lines);
+      gsap.killTweensOf(glows);
       gsap.killTweensOf(containerRef.current);
     };
   }, []);
 
-  const addToRefs = (el: HTMLParagraphElement | null) => {
-    if (el && !textRefs.current.includes(el)) {
-      textRefs.current.push(el);
+  const addToLineRefs = (el: HTMLDivElement | null) => {
+    if (el && !lineRefs.current.includes(el)) {
+      lineRefs.current.push(el);
+    }
+  };
+
+  const addToGlowRefs = (el: HTMLParagraphElement | null) => {
+    if (el && !glowRefs.current.includes(el)) {
+      glowRefs.current.push(el);
     }
   };
 
   return (
     <div ref={containerRef} className="top-quote-container">
-        <p ref={addToRefs} className="top-quote-text">God, His angels and all those in heavens and on earth,</p>
-        <p ref={addToRefs} className="top-quote-text">even ants in their hills and fish in the water,</p>
-        <p ref={addToRefs} className="top-quote-text">call down blessings on those who instruct others in beneficial knowledge.</p>
-        <p ref={addToRefs} className="top-quote-text attribution" style={{ textAlign: 'right', marginTop: '4px' }}>~ (Holy Prophet, The Merciful SAW)</p>
+      {quoteLines.map((text, index) => (
+        <div key={index} ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative' }}>
+          {/* Base Layer - Always visible, low glow */}
+          <p className="top-quote-text base-layer">{text}</p>
+
+          {/* Glow Layer - Animates opacity, high glow */}
+          <p ref={addToGlowRefs} className="top-quote-text glow-layer" aria-hidden="true">{text}</p>
+        </div>
+      ))}
+
+      <div ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative', textAlign: 'right', marginTop: '4px' }}>
+        <p className="top-quote-text attribution base-layer">{attribution}</p>
+        <p ref={addToGlowRefs} className="top-quote-text attribution glow-layer" aria-hidden="true">{attribution}</p>
+      </div>
     </div>
   );
 };
