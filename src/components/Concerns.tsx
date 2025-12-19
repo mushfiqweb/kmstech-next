@@ -23,10 +23,10 @@ export const Concerns = () => {
              <div className="logo-fallback">KMS Marketplace</div>
           ) : (
             <Image 
-                src="/kms-mp.svg" 
+                src="/kms-mp.png" 
                 alt="KMS Marketplace Logo" 
-                width={200} 
-                height={100}
+                width={300} 
+                height={150}
                 className="concern-logo"
                 onError={() => setKmsError(true)}
             />
@@ -46,8 +46,8 @@ export const Concerns = () => {
             <Image 
                 src="/KMS_BG-white.png" 
                 alt="Beneath Green Logo" 
-                width={250} 
-                height={150}
+                width={400} 
+                height={200}
                 className="concern-logo"
                 onError={() => setBgreenError(true)}
             />

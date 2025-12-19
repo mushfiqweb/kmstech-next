@@ -11,12 +11,14 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.8",
     "@vercel/analytics": "^1.6.1",
     "gsap": "^3.14.2",
     "lucide-react": "^0.378.0",
     "next": "16.0.10",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-dom": "19.2.1",
+    "snazzy-info-window": "^1.1.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -26,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/snazzy-info-window": "^1.1.11",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "husky": "^9.1.7",

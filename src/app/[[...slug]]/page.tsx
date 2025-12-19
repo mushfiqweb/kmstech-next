@@ -31,7 +31,7 @@ export default function App() {
       case 'concerns':
         return <Concerns />;
       case 'contact':
-        return <Contact onClose={closeModal} />;
+        return <Contact />;
       default:
         return null;
     }

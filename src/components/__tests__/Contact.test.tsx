@@ -1,42 +1,43 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Contact } from '../Contact';
 
 describe('Contact Component', () => {
-  const mockOnClose = jest.fn();
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-    window.alert = jest.fn(); // Mock alert
+  it('renders the company name', () => {
+    render(<Contact />);
+    expect(screen.getByText('KMS Tech')).toBeInTheDocument();
   });
 
-  it('renders the contact form', () => {
-    render(<Contact onClose={mockOnClose} />);
-    expect(screen.getByLabelText(/Name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Send/i })).toBeInTheDocument();
+  it('renders the WhatsApp link with correct href', () => {
+    render(<Contact />);
+    const whatsappLink = screen.getByLabelText(/Chat on WhatsApp/i);
+    expect(whatsappLink).toBeInTheDocument();
+    expect(whatsappLink).toHaveAttribute('href', 'https://wa.me/8801711741953');
   });
 
-  it('has required attributes on inputs', () => {
-    render(<Contact onClose={mockOnClose} />);
-    expect(screen.getByLabelText(/Name/i)).toBeRequired();
-    expect(screen.getByLabelText(/Email/i)).toBeRequired();
-    expect(screen.getByLabelText(/Message/i)).toBeRequired();
+  it('renders the Phone link with correct href', () => {
+    render(<Contact />);
+    const phoneLink = screen.getByLabelText(/Call \+880/i);
+    expect(phoneLink).toBeInTheDocument();
+    expect(phoneLink).toHaveAttribute('href', 'tel:+8801911256358');
   });
 
-  it('calls onClose when form is submitted', () => {
-    render(<Contact onClose={mockOnClose} />);
-    
-    // Fill out the form
-    fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: 'John Doe' } });
-    fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'john@example.com' } });
-    fireEvent.change(screen.getByLabelText(/Message/i), { target: { value: 'Hello' } });
-    
-    // Submit
-    fireEvent.submit(screen.getByRole('button', { name: /Send/i }));
-    
-    expect(window.alert).toHaveBeenCalledWith('Message sent!');
-    expect(mockOnClose).toHaveBeenCalledTimes(1);
+  it('renders the Email link with correct href', () => {
+    render(<Contact />);
+    const emailLink = screen.getByLabelText(/Email info@kmstech.co/i);
+    expect(emailLink).toBeInTheDocument();
+    expect(emailLink).toHaveAttribute('href', 'mailto:info@kmstech.co');
+  });
+
+  it('renders the Location link with correct href', () => {
+    render(<Contact />);
+    const locationLink = screen.getByLabelText(/View location on Google Maps/i);
+    expect(locationLink).toBeInTheDocument();
+    expect(locationLink).toHaveAttribute('href', 'https://maps.app.goo.gl/2L7NCNNJH9XowiMcA');
+  });
+
+  it('renders the Trade License information', () => {
+    render(<Contact />);
+    expect(screen.getByText(/Trade License: TRAD\/DNCC\/131256\/2022/i)).toBeInTheDocument();
   });
 });
