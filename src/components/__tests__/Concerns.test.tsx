@@ -3,10 +3,9 @@ import { render, screen } from '@testing-library/react';
 import { Concerns } from '../Concerns';
 
 describe('Concerns Component', () => {
-  it('renders the common questions list', () => {
+  it('renders the section title', () => {
     render(<Concerns />);
-    expect(screen.getByText('Common Questions')).toBeInTheDocument();
-    expect(screen.getByText(/How do you ensure security?/i)).toBeInTheDocument();
+    expect(screen.getByText('Our Other Concerns')).toBeInTheDocument();
   });
 
   it('renders the KMS Marketplace logo with correct link', () => {

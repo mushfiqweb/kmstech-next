@@ -13,16 +13,16 @@ export const About = () => {
 
         <p>The full-form of <strong>K</strong> <strong>M</strong> <strong>S</strong> is actually the
           Core
-          part of the name of a great Sufi saint of this sub-continent: 'Hazrat Allama Shah Sufi
-          <strong>K</strong>hwaja <strong>M</strong>ohammad <strong>S</strong>ayefuddin Naqshebondi
+          part of the name of a great Sufi saint of this sub-continent: 'Hazrat Allama Shah Sufi 
+          <strong> K</strong>hwaja <strong>M</strong>ohammad <strong>S</strong>ayefuddin Naqshebondi
           Mujaddedi Enayetpuri Shamvugonji (R.)!' The founder of KMS Tech is a direct descendant and
           disciple of Him.
         </p>
 
         <p>Miraculously, the founder's respected Father's full name and also his own name start with
           these
-          same three characters! Also, the co-founders and fellows have <strong>M</strong> &
-          <strong>S</strong> common in their names too.
+          same three characters! Also, the co-founders and fellows have <strong>M</strong> & 
+          <strong> S</strong> common in their names too.
         </p>
 
         <p>And, all the members are the follower of this blessed legacy and upholding the same spirit of
@@ -74,7 +74,7 @@ export const About = () => {
         </ul>
 
         <h3>Vision</h3>
-        <ul className="hover-list">
+        <ul className="hover-list vision-list">
           <li>Aspire to contribute to the religious and socio-economic sectors through our service &
             welfare activities</li>
           <li>Aim to work for the greater interest of humanity, as we prefer to do our work with an
