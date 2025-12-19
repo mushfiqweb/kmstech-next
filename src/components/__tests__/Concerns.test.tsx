@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Concerns } from '../Concerns';
 
 describe('Concerns Component', () => {
@@ -32,5 +32,19 @@ describe('Concerns Component', () => {
 
     const bgreenImage = screen.getByAltText('Beneath Green Logo');
     expect(bgreenImage).toBeInTheDocument();
+  });
+
+  it('shows fallback text on KMS image error', () => {
+    render(<Concerns />);
+    const img = screen.getByAltText('KMS Marketplace Logo');
+    fireEvent.error(img);
+    expect(screen.getByText('KMS Marketplace')).toBeInTheDocument();
+  });
+
+  it('shows fallback text on Beneath Green image error', () => {
+    render(<Concerns />);
+    const img = screen.getByAltText('Beneath Green Logo');
+    fireEvent.error(img);
+    expect(screen.getByText('Beneath Green')).toBeInTheDocument();
   });
 });
