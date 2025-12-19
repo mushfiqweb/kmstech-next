@@ -274,7 +274,7 @@ main {
   font-weight: 600;
   padding: 2px 12px;
   /* Reduced vertical padding */
-  margin: 0;
+  margin-top: 20px;
   display: block;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -284,6 +284,7 @@ main {
   display: block;
   text-align: center;
   padding: 0px 12px;
+  margin-bottom: 40px;
   /* Reduced vertical padding */
 }
 
