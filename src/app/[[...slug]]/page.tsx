@@ -82,6 +82,7 @@ export default function App() {
           isOpen={!!activeModal}
           onClose={closeModal}
           title={getModalTitle()}
+          className={activeModal === 'services' ? 'services-modal' : activeModal === 'about' ? 'about-modal' : ''}
         >
           {renderModalContent()}
         </Modal>
