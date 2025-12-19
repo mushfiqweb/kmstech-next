@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 export const TopQuote = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,20 +46,6 @@ export const TopQuote = () => {
       stagger: 0.4,
     });
 
-    // 2. Continuous Glow Pulse (The missing piece!)
-    // gsap.to(glows, {
-    //   opacity: 0.5,
-    //   duration: 2.5,
-    //   repeat: -1,
-    //   yoyo: true,
-    //   ease: "sine.inOut",
-    //   stagger: {
-    //     each: 0.3,
-    //     from: "start" 
-    //   }
-    // });
-
-
     // Subtle floating movement for the container
     gsap.to(containerRef.current, {
       y: -10,
@@ -94,10 +81,18 @@ export const TopQuote = () => {
       {quoteLines.map((text, index) => (
         <div key={index} ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative' }}>
           {/* Base Layer - Always visible, low glow */}
-          <p className="top-quote-text base-layer">{text}</p>
+          <p className="top-quote-text base-layer">
+            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '6px', verticalAlign: 'top' }} />}
+            {text}
+            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '6px', verticalAlign: 'top' }} />}
+          </p>
 
           {/* Glow Layer - Animates opacity, high glow */}
-          <p ref={addToGlowRefs} className="top-quote-text glow-layer" aria-hidden="true">{text}</p>
+          <p ref={addToGlowRefs} className="top-quote-text glow-layer" aria-hidden="true">
+            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '6px', verticalAlign: 'top' }} />}
+            {text}
+            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '6px', verticalAlign: 'top' }} />}
+          </p>
         </div>
       ))}
 
