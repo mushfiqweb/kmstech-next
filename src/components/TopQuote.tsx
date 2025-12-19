@@ -82,16 +82,16 @@ export const TopQuote = () => {
         <div key={index} ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative' }}>
           {/* Base Layer - Always visible, low glow */}
           <p className="top-quote-text base-layer">
-            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '1px', verticalAlign: 'top' }} />}
+            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '3px', verticalAlign: 'top' }} />}
             {text}
-            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '1px', verticalAlign: 'top' }} />}
+            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '3px', verticalAlign: 'top' }} />}
           </p>
 
           {/* Glow Layer - Animates opacity, high glow */}
           <p ref={addToGlowRefs} className="top-quote-text glow-layer" aria-hidden="true">
-            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '1px', verticalAlign: 'top' }} />}
+            {index === 0 && <RiDoubleQuotesL style={{ marginRight: '3px', verticalAlign: 'top' }} />}
             {text}
-            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '1px', verticalAlign: 'top' }} />}
+            {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '3px', verticalAlign: 'top' }} />}
           </p>
         </div>
       ))}
