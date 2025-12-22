@@ -23,9 +23,9 @@ const atkinson = Atkinson_Hyperlegible({
 export const metadata: Metadata = {
   // Basic Metadata
   title: "KMS Tech",
-  description: "Secure, reliable & optimized IT solutions",
+  description: "Sacred Intention Leads to Perfection",
   applicationName: "KMS Tech",
-  authors: [{ name: "KMS Tech Team", url: "https://kmstech.co" }],
+  authors: [{ name: "KMS Tech", url: "https://kmstech.co" }],
   generator: "Next.js",
   keywords: ["IT solutions", "software development", "consultancy", "web development"],
   referrer: "origin-when-cross-origin",
@@ -67,11 +67,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://kmstech.co",
     title: "KMS Tech",
-    description: "Secure, reliable & optimized IT solutions",
+    description: "Sacred Intention Leads to Perfection",
     siteName: "KMS Tech",
     images: [
       {
-        url: "/og-image.jpg", // Must be an absolute URL
+        url: "/kmstech-next.png", // Must be an absolute URL
         width: 1200,
         height: 630,
         alt: "KMS Tech",
@@ -83,11 +83,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "KMS Tech",
-    description: "Secure, reliable & optimized IT solutions",
+    description: "Sacred Intention Leads to Perfection",
     siteId: "",
     creator: "@kmstech",
     creatorId: "",
-    images: ["/twitter-image.jpg"], // Must be an absolute URL
+    images: ["/kmstech-next.png"], // Must be an absolute URL
   },
 
   // Verification
@@ -112,30 +112,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-
-  // Alternates
-  alternates: {
-    canonical: "https://kmstech.co",
-    languages: {
-      "en-US": "https://kmstech.co/en-US",
-    },
-  },
-
-  // App Links
-  appLinks: {
-    ios: {
-      url: "https://kmstech.co/ios",
-      app_store_id: "app_store_id",
-    },
-    android: {
-      package: "com.kmstech.app",
-      app_name: "KMS Tech",
-    },
-    web: {
-      url: "https://kmstech.co/web",
-      should_fallback: true,
-    },
   },
 
   // Category
