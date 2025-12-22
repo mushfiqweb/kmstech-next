@@ -13,36 +13,31 @@ import {
   FaHeadset
 } from 'react-icons/fa';
 
-/**
- * Services component displays the "What We Offer" section including:
- * - A grid of service cards (Software, Consultancy, Web, Mobile, UX).
- * - A workflow process visualization (Plan, Design, Deliver, Support).
- */
 export const Services = () => {
   const services = [
     {
       title: "Software Design & Development",
-      description: "Custom software solutions tailored to your business needs, from architecture to implementation.",
+      description: "",
       Icon: FaLaptopCode
     },
     {
       title: "IT & Business Consultancy",
-      description: "Strategic advice to optimize your technology infrastructure and business processes.",
+      description: "",
       Icon: FaHandshake
     },
     {
       title: "Web Application Development",
-      description: "Scalable and responsive web applications built with modern technologies.",
+      description: "",
       Icon: FaGlobe
     },
     {
       title: "Mobile App Development",
-      description: "Native and cross-platform mobile apps for iOS and Android.",
+      description: "",
       Icon: FaMobileAlt
     },
     {
       title: "UX Engineering & Digital Marketing",
-      description: "User-centric design and digital marketing strategies to grow your brand.",
+      description: "",
       Icon: FaPaintBrush
     }
   ];
