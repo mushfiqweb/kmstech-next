@@ -38,9 +38,9 @@ export const SVGLayer = () => {
         </filter>
 
         <linearGradient id="main-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#062412b7" />
+          <stop offset="0%" stopColor="#106432b7" />
           <stop offset="45%" stopColor="#0a0a0a" />
-          <stop offset="55%" stopColor="#0a0a0a" />
+          <stop offset="55%" stopColor="#0a0a0aff" />
           <stop offset="100%" stopColor="#6b1010" />
         </linearGradient>
 
