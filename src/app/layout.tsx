@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Atkinson_Hyperlegible } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { OfflineIndicator } from "@/components/OfflineIndicator";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
   },
 
   // Manifest
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
 
   // Open Graph
   openGraph: {
@@ -131,6 +132,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} ${atkinson.variable}`}>
         {children}
         <Analytics />
+        <OfflineIndicator />
       </body>
     </html>
   );

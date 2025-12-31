@@ -61,7 +61,7 @@ export default function App() {
 
           {/* Content Stack: Nav Links + Footer Info */}
           <div className="content-stack">
-            <button className="nav-link" onClick={() => setActiveModal('about')}>About Us</button>
+            <button className="nav-link" onClick={() => setActiveModal('about')}>About</button>
             <button className="nav-link" onClick={() => setActiveModal('blog')}>Blog</button>
             <button className="nav-link" onClick={() => setActiveModal('concerns')}>Concerns</button>
             <button className="nav-link" onClick={() => setActiveModal('contact')}>Contact</button>
