@@ -15,3 +15,12 @@ jest.mock('gsap', () => ({
     restart: jest.fn(),
   })),
 }));
+
+// Mocks for libraries that ship ESM and break Jest
+jest.mock('react-syntax-highlighter', () => ({
+  PrismAsyncLight: ({ children }) => <pre>{children}</pre>,
+}));
+
+jest.mock('react-syntax-highlighter/dist/cjs/styles/prism', () => ({
+  vscDarkPlus: {},
+}));

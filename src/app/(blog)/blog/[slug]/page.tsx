@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 )
             }
 
-            <BlogContent content={post.content.html} />
+            <BlogContent content={post.content.html} markdown={post.content.markdown} />
 
             {
                 post.tags && post.tags.length > 0 && (

@@ -273,7 +273,7 @@
 
 .blogContent pre {
     background: #1a1a1a;
-    padding: 20px;
+    padding: 5px;
     border-radius: 8px;
     overflow-x: auto;
     margin-bottom: 1.5em;
@@ -396,20 +396,36 @@
 }
 
 /* Pagination Styles */
-.pagination {
+/* Pagination Styles */
+.paginationWrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     margin-top: 60px;
     margin-bottom: 20px;
 }
 
-.pageIndicator {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+.paginationInfo {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-geist-mono);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pageNumbers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pageNumber {
     width: 40px;
     height: 40px;
     display: flex;
@@ -417,30 +433,70 @@
     justify-content: center;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.pageNumber:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.pageNumber.active {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 148, 68, 0.3);
+}
+
+.dots {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    padding: 0 4px;
 }
 
 .paginationBtn {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 10px 20px;
     background: rgba(255, 255, 255, 0.05);
-    /* Glassmorphic base */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    /* Rounded pill shape */
     color: #fff;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Smooth transition */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 0.95rem;
-    position: relative;
-    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.paginationBtn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.paginationBtn:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 148, 68, 0.2);
+}
+
+.paginationBtn:active:not(.disabled) {
+    transform: translateY(0) scale(0.98);
 }
 
 @media (max-width: 768px) {
@@ -454,52 +510,24 @@
         height: 16px;
     }
 
-    .pageIndicator {
+    /* Hide dots/numbers on small screens if too cramped */
+    .pageNumbers {
+        gap: 4px;
+    }
+
+    .pageNumber {
         width: 32px;
         height: 32px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
-}
 
-.paginationBtn:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-green);
-    transform: translateY(-2px) scale(1.02);
-    /* Micro-interaction: Scale & Lift */
-    box-shadow: 0 8px 15px rgba(0, 148, 68, 0.2);
-    color: #fff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.paginationBtn:active:not(:disabled) {
-    transform: translateY(0) scale(0.98);
-    /* Micro-interaction: Press */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.paginationBtn:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 148, 68, 0.5);
-    /* Accessibility focus ring */
-    border-color: var(--primary-green);
-}
-
-.paginationBtn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background: rgba(255, 255, 255, 0.02);
-    border-color: rgba(255, 255, 255, 0.05);
-    transform: none;
-    box-shadow: none;
-}
-
-.paginationBtn svg {
-    transition: transform 0.3s ease;
-}
-
-.paginationBtn:hover:not(:disabled) svg {
-    transform: scale(1.2);
-    /* Icon micro-interaction */
+    /* On very small screens, maybe hide intermediate numbers */
+    @media (max-width: 480px) {
+        .pageNumbers {
+            display: none;
+            /* Fallback to just Next/Prev on tiny screens */
+        }
+    }
 }
 
 /* Desktop Horizontal Meta Layout */
@@ -528,5 +556,99 @@
     .authorInfo,
     .readTime {
         flex-shrink: 0;
+    }
+}
+
+/* Code Block Styles */
+.codeBlockWrapper {
+    margin: 30px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1e1e1e;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.codeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #252526;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.codeLanguage {
+    font-family: var(--font-geist-mono);
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.copyButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+    color: var(--primary-green);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.codeContainer {
+    position: relative;
+    transition: max-height 0.3s ease;
+}
+
+.codeContainer.collapsed {
+    max-height: 400px;
+    /* Approx 20 lines */
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.expandButton {
+    width: 100%;
+    padding: 10px;
+    background: #252526;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.expandButton:hover {
+    background: #2d2d2d;
+    color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+    .codeBlockWrapper {
+        margin: 20px -16px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .codeHeader {
+        padding: 8px 12px;
     }
 }

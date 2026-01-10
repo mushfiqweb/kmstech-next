@@ -117,7 +117,7 @@ export const metadata: Metadata = {
 
   // Category
   category: "technology",
-  
+
   // Base URL for metadata
   metadataBase: new URL("https://kmstech.co"),
 };
