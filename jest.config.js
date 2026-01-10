@@ -23,6 +23,10 @@ const customJestConfig = {
       statements: 80,
     },
   },
+  transformIgnorePatterns: [
+    // Transform ESM modules from libraries: react-markdown, rehype-raw, remark-gfm, etc.
+    'node_modules/(?!(react-markdown|rehype-raw|remark-gfm|vfile|unist-.*|hast-.*|mdast-.*|micromark.*|decode-named-character-reference|character-entities|property-information|space-separated-tokens|comma-separated-tokens|bail|trough|unified|is-plain-obj|trim-lines)/)',
+  ],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

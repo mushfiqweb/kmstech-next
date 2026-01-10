@@ -15,10 +15,10 @@ export const metadata = {
 
 export default async function BlogsPage({ searchParams }: BlogsPageProps) {
     const params = await searchParams;
-    const afterCursor = params.after || undefined;
     const currentPage = params.page ? parseInt(params.page) : 1;
+    const POSTS_PER_PAGE = 6;
 
-    const postsData = await getPosts(6, afterCursor);
+    const postsData = await getPosts(currentPage, POSTS_PER_PAGE);
 
     if (!postsData) {
         return (
@@ -29,12 +29,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
         );
     }
 
-    const { edges, pageInfo } = postsData;
-    const posts = edges.map((edge) => edge.node);
+    const { posts, totalDocuments } = postsData;
 
     return (
         <main>
-            {/* Simple Header for grid view */}
             {/* Simple Header for grid view */}
             <div className={styles.blogPageHeader}>
                 <h3 className={styles.blogPageSubtitle}>
@@ -49,9 +47,9 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
             </div>
 
             <Pagination
-                hasNextPage={pageInfo.hasNextPage}
-                endCursor={pageInfo.endCursor}
                 currentPage={currentPage}
+                totalPosts={totalDocuments}
+                postsPerPage={POSTS_PER_PAGE}
             />
         </main>
     );
