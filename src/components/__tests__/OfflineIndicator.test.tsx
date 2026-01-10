@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act, fireEvent } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { OfflineIndicator } from '../OfflineIndicator';
 
 describe('OfflineIndicator', () => {

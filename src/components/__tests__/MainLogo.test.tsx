@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { MainLogo } from '../MainLogo';
@@ -7,25 +8,25 @@ describe('MainLogo Component', () => {
   beforeAll(() => {
     // Mock getTotalLength for SVG elements
     const mockGetTotalLength = jest.fn(() => 100);
-    
+
     // Attempt to mock on various prototypes
     if (typeof SVGElement !== 'undefined') {
-        (SVGElement.prototype as any).getTotalLength = mockGetTotalLength;
+      (SVGElement.prototype as any).getTotalLength = mockGetTotalLength;
     } else if (typeof window !== 'undefined' && window.SVGElement) {
-        (window.SVGElement.prototype as any).getTotalLength = mockGetTotalLength;
+      (window.SVGElement.prototype as any).getTotalLength = mockGetTotalLength;
     }
-    
+
     // Also try SVGPathElement/SVGPolygonElement explicitly if they exist
     if (typeof SVGPathElement !== 'undefined') {
-        SVGPathElement.prototype.getTotalLength = mockGetTotalLength;
+      SVGPathElement.prototype.getTotalLength = mockGetTotalLength;
     } else if (typeof window !== 'undefined' && window.SVGPathElement) {
-        window.SVGPathElement.prototype.getTotalLength = mockGetTotalLength;
+      window.SVGPathElement.prototype.getTotalLength = mockGetTotalLength;
     }
 
     if (typeof SVGPolygonElement !== 'undefined') {
-        SVGPolygonElement.prototype.getTotalLength = mockGetTotalLength;
+      SVGPolygonElement.prototype.getTotalLength = mockGetTotalLength;
     } else if (typeof window !== 'undefined' && window.SVGPolygonElement) {
-        window.SVGPolygonElement.prototype.getTotalLength = mockGetTotalLength;
+      window.SVGPolygonElement.prototype.getTotalLength = mockGetTotalLength;
     }
   });
 
@@ -47,22 +48,22 @@ describe('MainLogo Component', () => {
   it('restarts animation on click', () => {
     // We need to capture the timeline mock instance
     const timelineInstance = {
-        to: jest.fn().mockReturnThis(),
-        from: jest.fn().mockReturnThis(),
-        fromTo: jest.fn().mockReturnThis(),
-        kill: jest.fn(),
-        restart: jest.fn(),
+      to: jest.fn().mockReturnThis(),
+      from: jest.fn().mockReturnThis(),
+      fromTo: jest.fn().mockReturnThis(),
+      kill: jest.fn(),
+      restart: jest.fn(),
     };
     (gsap.timeline as jest.Mock).mockReturnValue(timelineInstance);
 
     render(<MainLogo />);
-    
+
     const logoContainer = document.querySelector('.logo-container');
     if (logoContainer) {
-        fireEvent.click(logoContainer);
-        expect(timelineInstance.restart).toHaveBeenCalled();
+      fireEvent.click(logoContainer);
+      expect(timelineInstance.restart).toHaveBeenCalled();
     } else {
-        fail('Logo container not found');
+      fail('Logo container not found');
     }
   });
 });
