@@ -9,6 +9,18 @@ const withPWA = require("next-pwa")({
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  images: {
+    domains: ['cdn.hashnode.com', 'medium.com'], // Added medium.com just in case, but Hashnode is primary
+  },
+  async redirects() {
+    return [
+      {
+        source: '/blogs/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withPWA(nextConfig);

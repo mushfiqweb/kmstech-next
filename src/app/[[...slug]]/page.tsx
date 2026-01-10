@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { MainLogo } from '@/components/MainLogo';
 import { SVGLayer } from '@/components/SVGLayer';
 import { Modal } from '@/components/Modal';
@@ -10,7 +11,7 @@ import { Blog } from '@/components/Blog';
 import { Services } from '@/components/Services';
 import { Concerns } from '@/components/Concerns';
 import { Contact } from '@/components/Contact';
-
+import { TransitionLink } from '@/components/TransitionLink';
 // --- MAIN APP COMPONENT ---
 
 export default function App() {
@@ -62,7 +63,7 @@ export default function App() {
           {/* Content Stack: Nav Links + Footer Info */}
           <div className="content-stack">
             <button className="nav-link" onClick={() => setActiveModal('about')}>About</button>
-            <button className="nav-link" onClick={() => setActiveModal('blog')}>Blog</button>
+            <TransitionLink href="/blogs" className="nav-link">Blogs</TransitionLink>
             <button className="nav-link" onClick={() => setActiveModal('concerns')}>Concerns</button>
             <button className="nav-link" onClick={() => setActiveModal('contact')}>Contact</button>
             <button className="nav-link" onClick={() => setActiveModal('services')}>Services</button>
