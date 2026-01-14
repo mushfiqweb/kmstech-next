@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import CodeBlock from '../blog/CodeBlock';
 
 // Mock react-syntax-highlighter because it uses async loading or complex DOM
@@ -23,6 +23,11 @@ describe('CodeBlock', () => {
         expect(screen.getByText(code)).toBeInTheDocument();
     });
 
+    it('defaults language to "code" if not provided', () => {
+        render(<CodeBlock language="" value={code} />);
+        expect(screen.getByText('code')).toBeInTheDocument();
+    });
+
     it('copies code to clipboard', async () => {
         render(<CodeBlock language="javascript" value={code} />);
         const copyBtn = screen.getByLabelText('Copy to clipboard');
@@ -35,16 +40,13 @@ describe('CodeBlock', () => {
             expect(screen.getByText('Copied')).toBeInTheDocument();
         });
     });
+
     it('shows expand button for long code', () => {
         const longCode = Array(25).fill('line').join('\n');
         render(<CodeBlock language="javascript" value={longCode} />);
 
         const expandBtn = screen.getByText('Show More');
         expect(expandBtn).toBeInTheDocument();
-
-        // Initial state is collapsed
-        // (We can check if container has collapsed class, but that is implementation detail. 
-        //  The button presence confirms logic trigger.)
     });
 
     it('toggles expansion on click', () => {
@@ -71,7 +73,9 @@ describe('CodeBlock', () => {
         await waitFor(() => expect(screen.getByText('Copied')).toBeInTheDocument());
 
         // Fast-forward time
-        jest.advanceTimersByTime(2000);
+        act(() => {
+            jest.advanceTimersByTime(2000);
+        });
 
         await waitFor(() => expect(screen.getByText('Copy')).toBeInTheDocument());
         jest.useRealTimers();
