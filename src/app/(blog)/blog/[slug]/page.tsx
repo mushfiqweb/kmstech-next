@@ -1,4 +1,5 @@
 import { getPost, Post } from '@/lib/hashnode';
+import ogMap from '@/data/og-map.json'; // Import local OG mapping
 import BlogContent from '@/components/blog/BlogContent';
 import ShareLinks from '@/components/blog/ShareLinks';
 import styles from '@/components/blog/blog.module.css';
@@ -23,6 +24,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         };
     }
 
+    const localOgImage = (ogMap as Record<string, string>)[slug];
+    // Prioritize local OG image, fallback to Hashnode cover image
+    const ogImageUrl = localOgImage
+        ? `${process.env.NEXT_PUBLIC_SITE_URL || 'https://kmstech.co'}${localOgImage}`
+        : post.coverImage?.url;
+
+    const ogImages = ogImageUrl ? [{ url: ogImageUrl }] : [];
+
     return {
         title: `${post.title} | KMS Tech Blog`,
         description: post.brief,
@@ -30,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             type: 'article',
             title: post.title,
             description: post.brief,
-            images: post.coverImage?.url ? [{ url: post.coverImage.url }] : [],
+            images: ogImages,
             publishedTime: post.publishedAt,
             authors: [post.author.name],
         },
@@ -38,7 +47,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             card: 'summary_large_image',
             title: post.title,
             description: post.brief,
-            images: post.coverImage?.url ? [post.coverImage.url] : [],
+            images: ogImages,
         },
     };
 }
