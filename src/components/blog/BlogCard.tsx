@@ -4,18 +4,22 @@ import { format } from 'date-fns';
 import { Calendar, Clock, User, Eye } from 'lucide-react';
 import styles from './blog.module.css';
 import { Post } from '@/lib/hashnode';
+import ogMap from '@/data/og-map.json'; // Import local OG mapping
 
 interface BlogCardProps {
     post: Post;
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
+    const localOgImage = (ogMap as Record<string, string>)[post.slug];
+    const coverImageSrc = localOgImage || post.coverImage?.url;
+
     return (
         <Link href={`/blog/${post.slug}`} className={styles.blogCard}>
             <div className={styles.coverImageWrapper}>
-                {post.coverImage?.url ? (
+                {coverImageSrc ? (
                     <Image
-                        src={post.coverImage.url}
+                        src={coverImageSrc}
                         alt={post.title}
                         fill
                         className={styles.coverImage}
