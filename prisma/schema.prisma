@@ -1,0 +1,22 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Stats {
+  type      String   @default("blog")
+  slug      String
+  views     Int      @default(0)
+  loves     Int      @default(0)
+  applauses Int      @default(0)
+  ideas     Int      @default(0)
+  bullseyes Int      @default(0)
+
+  @@id([type, slug])
+  @@map("stats")
+}
