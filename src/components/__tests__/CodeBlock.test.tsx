@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import CodeBlock from '../blog/CodeBlock';
 
 // Mock react-syntax-highlighter because it uses async loading or complex DOM
@@ -71,7 +71,9 @@ describe('CodeBlock', () => {
         await waitFor(() => expect(screen.getByText('Copied')).toBeInTheDocument());
 
         // Fast-forward time
-        jest.advanceTimersByTime(2000);
+        act(() => {
+            jest.advanceTimersByTime(2000);
+        });
 
         await waitFor(() => expect(screen.getByText('Copy')).toBeInTheDocument());
         jest.useRealTimers();

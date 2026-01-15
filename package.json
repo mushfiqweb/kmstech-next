@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.1",
+    "@prisma/client": "^6.19.2",
     "@react-google-maps/api": "^2.20.8",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@vercel/analytics": "^1.6.1",
@@ -22,6 +24,7 @@
     "lucide-react": "^0.378.0",
     "next": "16.0.10",
     "next-pwa": "^5.6.0",
+    "prisma": "^6.19.2",
     "puppeteer": "^24.35.0",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -31,6 +34,7 @@
     "remark-gfm": "^4.0.1",
     "sanitize-html": "^2.17.0",
     "snazzy-info-window": "^1.1.1",
+    "swr": "^2.3.8",
     "tsx": "^4.21.0"
   },
   "devDependencies": {

@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
@@ -6,6 +8,8 @@ import styles from './blog.module.css';
 import { Post } from '@/lib/hashnode';
 import ogMap from '@/data/og-map.json'; // Import local OG mapping
 
+import { useViewCounter } from '@/hooks/useViewCounter';
+
 interface BlogCardProps {
     post: Post;
 }
@@ -13,6 +17,7 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     const localOgImage = (ogMap as Record<string, string>)[post.slug];
     const coverImageSrc = localOgImage || post.coverImage?.url;
+    const { views } = useViewCounter(post.slug);
 
     return (
         <Link href={`/blog/${post.slug}`} className={styles.blogCard}>
@@ -61,7 +66,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                         <span>{post.readTimeInMinutes} min read</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginLeft: '6px' }}>
                             <Eye size={14} />
-                            <span>{post.views}</span>
+                            <span>{views > 0 ? views : post.views}</span>
                         </div>
                     </div>
                 </div>

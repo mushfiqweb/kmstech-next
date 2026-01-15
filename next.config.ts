@@ -10,7 +10,16 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ['cdn.hashnode.com', 'medium.com'], // Added medium.com just in case, but Hashnode is primary
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.hashnode.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'medium.com',
+      },
+    ],
   },
   async redirects() {
     return [

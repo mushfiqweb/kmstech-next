@@ -1,6 +1,7 @@
 import { getPost, Post } from '@/lib/hashnode';
 import ogMap from '@/data/og-map.json'; // Import local OG mapping
 import BlogContent from '@/components/blog/BlogContent';
+import ViewCountLabel from '@/components/blog/ViewCountLabel';
 import ShareLinks from '@/components/blog/ShareLinks';
 import styles from '@/components/blog/blog.module.css';
 import Image from 'next/image';
@@ -99,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                         <div className={styles.readTime}>
                             <Eye size={16} />
-                            <span style={{ marginLeft: 4 }}>{post.views} views</span>
+                            <ViewCountLabel slug={slug} initialViews={post.views} increment />
                         </div>
                     </div>
                 </div>
