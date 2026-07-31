@@ -19,13 +19,6 @@
 
 **KMS Tech Next** is an enterprise-grade web application platform serving as the primary digital hub and tech presentation portal for **KMS Tech** (*Trade License: TRAD/DNCC/131256/2022*).
 
-### Divine Naming & Spiritual Origin
-The name **KMS Tech** carries a sacred spiritual history:
-* **The KMS Initials**: The letters **K**, **M**, and **S** represent the core initials of the renowned sub-continental Sufi saint:  
-  **'Hazrat Allama Shah Sufi Khwaja Mohammad Sayefuddin Naqshebondi Mujaddedi Enayetpuri Shamvugonji (R.)'**
-* **Family & Team Lineage**: The founder is a direct descendant and disciple of the saint. Remarkably, the founder's father's name, the founder's own name, and key co-founders' names share the letters **K**, **M**, and **S**.
-* **Evolution**: Founded in 2012 by CSE graduates as *Technoism IT*, the venture evolved into **KMS Tech**, providing cutting-edge IT solutions, software engineering, and business consultancy.
-
 ---
 
 ## 📐 System Topology & Data Flow
@@ -73,15 +66,17 @@ graph TD
 ## 🔬 Core Architectural Subsystems
 
 ### 1. Hybrid SPA / SSR Architecture
+
 * **Single-Page Shell (`/[[...slug]]`)**: The main landing page behaves as a seamless SPA. Navigation triggers custom interactive modals ([Modal.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Modal.tsx)) containing deep-dive sections:
-  - [About.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/About.tsx): Corporate history, Sufi saint heritage, mission & vision.
-  - [Services.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Services.tsx): 5 core service offerings & 4-step workflow process.
-  - [Concerns.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Concerns.tsx): Portfolio & sister concerns (*KMS Marketplace*, *Beneath Green*).
-  - [Contact.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Contact.tsx): Phone (+880 1911 256 358), WhatsApp (+880 1711 741 953), email (`info@kmstech.co`), address (*North Badda, Dhaka*).
-  - [Blog.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Blog.tsx): Featured article previews.
+  * [About.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/About.tsx): Corporate history, Sufi saint heritage, mission & vision.
+  * [Services.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Services.tsx): 5 core service offerings & 4-step workflow process.
+  * [Concerns.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Concerns.tsx): Portfolio & sister concerns (*KMS Marketplace*, *Beneath Green*).
+  * [Contact.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Contact.tsx): Phone (+880 1911 256 358), WhatsApp (+880 1711 741 953), email (`info@kmstech.co`), address (*North Badda, Dhaka*).
+  * [Blog.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/Blog.tsx): Featured article previews.
 * **Headless SSR Blog (`/(blog)/blogs`, `/(blog)/blog/[slug]`)**: Fully server-rendered routes providing search engine crawlers with clean semantic HTML5 markup, JSON-LD metadata, dynamic `generateMetadata`, and structured Open Graph tags.
 
 ### 2. Headless Content Engine (`src/lib/hashnode.ts`)
+
 * **GraphQL Integration**: Built with `graphql-request` targeting `https://gql.hashnode.com` (`kmstech.hashnode.dev`).
 * **ISR & Caching**: Custom `fetch` transport executing Next.js Incremental Static Regeneration (`next: { revalidate: 60 }`), striking an optimal balance between fast response times and up-to-date content.
 * **Pagination**: Implements cursor-based recursive fetching (`getAllPosts`) alongside offset-based pagination (`getPosts`) for responsive 6 posts/page grid rendering.
@@ -118,6 +113,7 @@ sequenceDiagram
 ```
 
 * **Schema Definition**: Composite primary key `(type, slug)` stored in table `stats`.
+
 ```prisma
 model Stats {
   type      String   @default("blog")
@@ -134,10 +130,12 @@ model Stats {
 ```
 
 ### 4. Automated Headless OG Image Generator (`scripts/generate-og-images.ts`)
+
 * **Worker Execution**: Node.js script powered by Puppeteer launching a headless Chrome instance (`deviceScaleFactor: 2`, viewport `1200x630`).
 * **Workflow**: Navigates local post endpoints, waits for full DOM hydration (`networkidle0`), captures PNG screenshots, outputs static files to `/public/og-images/[slug].png`, and updates the lookup dictionary in `src/data/og-map.json`.
 
 ### 5. PWA & Offline Resilience
+
 * Built using `next-pwa` with automatic service worker lifecycle management (`register: true`, `skipWaiting: true`).
 * Integrated with a reactively rendered component ([OfflineIndicator.tsx](file:///c:/Users/mushfiq/Documents/GitHub/kmstech-next/src/components/OfflineIndicator.tsx)) monitoring `window.addEventListener('online' | 'offline')`.
 
@@ -152,9 +150,9 @@ model Stats {
 | **Type Safety** | TypeScript | `5.x` | Strict type validation across components, hooks, & APIs |
 | **Database & ORM** | Prisma / PostgreSQL | `6.19.2` | Relational persistence, composite index mapping, atomic queries |
 | **Data Fetching** | GraphQL Request / SWR | `7.4.0` / `2.3.8` | CMS GraphQL integration & client-side SWR caching |
-| **Animation Engine**| GSAP | `3.14.2` | Vector morphing, timeline transitions, interactive micro-effects |
+| **Animation Engine** | GSAP | `3.14.2` | Vector morphing, timeline transitions, interactive micro-effects |
 | **Content Parser** | React Markdown / Rehype | `10.1.0` / `7.0.0` | Markdown AST parsing, HTML sanitization, GFM syntax support |
-| **Syntax Highlight**| Syntax Highlighter | `16.1.0` | Prism-based code block formatting in technical blogs |
+| **Syntax Highlight** | Syntax Highlighter | `16.1.0` | Prism-based code block formatting in technical blogs |
 | **PWA & Offline** | next-pwa | `5.6.0` | Service worker generation, asset pre-caching, offline fallback |
 | **Testing Suite** | Jest / React Testing Lib | `30.2.0` / `16.3.1` | Unit testing, DOM assertions, API mock assertions |
 | **Automation** | Puppeteer | `24.35.0` | Viewport rendering & Open Graph image snapshot creation |
@@ -237,11 +235,13 @@ kmstech-next/
 ## ⚡ Quick Start & Development Setup
 
 ### 1. Prerequisites
+
 - **Node.js**: `v20.x` or higher
-- **Package Manager**: `pnpm` (recommended) or `npm`
-- **Database**: PostgreSQL server instance (local or hosted e.g., Supabase / Neon / AWS RDS)
+* **Package Manager**: `pnpm` (recommended) or `npm`
+* **Database**: PostgreSQL server instance (local or hosted e.g., Supabase / Neon / AWS RDS)
 
 ### 2. Environment Configuration
+
 Create a `.env.local` file in the root directory:
 
 ```env
@@ -258,6 +258,7 @@ NEXT_PUBLIC_SITE_URL=https://kmstech.co
 ```
 
 ### 3. Installation & Database Migration
+
 ```bash
 # Clone the repository
 git clone https://github.com/your-org/kmstech-next.git
@@ -272,9 +273,11 @@ npx prisma db push
 ```
 
 ### 4. Running Local Development Server
+
 ```bash
 pnpm dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser to interact with the application.
 
 ---
@@ -295,6 +298,7 @@ pnpm lint
 ```
 
 ### Coverage Overview
+
 ```text
 Test Suites: 23 passed, 23 total
 Tests:       87 passed, 87 total
@@ -306,13 +310,16 @@ Coverage:    97.45% Statements | 98.78% Lines
 ## 🤖 Automated Background Workers
 
 ### Generating OpenGraph Screenshots
+
 To generate high-resolution dynamic social preview images for all Hashnode blog posts:
 
 1. Start the local server: `pnpm dev` (runs on `localhost:3000`)
 2. Execute the headless Puppeteer script in a separate terminal:
+
 ```bash
 npx tsx scripts/generate-og-images.ts
 ```
+
 The script will inspect Hashnode posts, launch headless Chrome, save PNG previews under `/public/og-images/`, and automatically update `/src/data/og-map.json`.
 
 ---
@@ -335,7 +342,7 @@ This software is released under the **MIT License**.
 **KMS Tech**  
 *Trade License: TRAD/DNCC/131256/2022*  
 *Address: House# 231, Ward# 38, Satarkul Road, North Badda, Dhaka, Bangladesh*  
-*WhatsApp: +880 1711 741 953 | Phone: +880 1911 256 358 | Email: info@kmstech.co*  
+*WhatsApp: +880 1711 741 953 | Phone: +880 1911 256 358 | Email: <info@kmstech.co>*  
 *Website*: [kmstech.co](https://kmstech.co)
 
 ---
