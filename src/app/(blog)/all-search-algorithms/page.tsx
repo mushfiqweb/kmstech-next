@@ -9,7 +9,7 @@ import styles from '@/components/search-algo/search-algo.module.css';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kmstech.co';
 
 export const metadata: Metadata = {
-    title: 'All Search Algorithms Masterclass | KMS Tech',
+    title: 'Search Algorithms | KMS Tech',
     description:
         'Explore an interactive, visual guide to 13 fundamental search algorithms. Features live step-by-step visualizers, real-world industry use cases, time/space complexity analysis, and interactive animations.',
     keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         canonical: `${SITE_URL}/all-search-algorithms`,
     },
     openGraph: {
-        title: 'All Search Algorithms Masterclass: Interactive Visualizer & Use Cases | KMS Tech',
+        title: 'Search Algorithms: Interactive Visualizer & Use Cases | KMS Tech',
         description:
             'An interactive visual guide covering 13 search algorithms across sequential, interval, graph, pathfinding, string, and hash table categories.',
         url: `${SITE_URL}/all-search-algorithms`,
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
                 url: `${SITE_URL}/og-images/all-search-algorithms.gif`,
                 width: 1200,
                 height: 630,
-                alt: 'All Search Algorithms Masterclass - KMS Tech Interactive Engine',
+                alt: 'Search Algorithms - KMS Tech Interactive Engine',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'All Search Algorithms Masterclass | KMS Tech',
+        title: 'Search Algorithms | KMS Tech',
         description:
             'Interactive visualizer and real-world industry use cases for 13 fundamental search algorithms.',
         images: [`${SITE_URL}/og-images/all-search-algorithms.gif`],
@@ -56,7 +56,7 @@ export default function AllSearchAlgorithmsPage() {
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
-        headline: 'All Search Algorithms Masterclass: Interactive Visualizer & Industry Use Cases',
+        headline: 'Search Algorithms: Interactive Visualizer & Industry Use Cases',
         description:
             'Comprehensive interactive guide featuring step-by-step visualizers, time/space complexity analysis, and real-world software architecture applications for 13 fundamental search algorithms.',
         image: `${SITE_URL}/og-images/all-search-algorithms.gif`,
@@ -87,7 +87,7 @@ export default function AllSearchAlgorithmsPage() {
 
             {/* Hero Section */}
             <header className={styles.heroSection}>
-                <h1 className={styles.heroTitle}>All Search Algorithms Masterclass</h1>
+                <h1 className={styles.heroTitle}>Search Algorithms</h1>
                 <p className={styles.heroSubtitle}>
                     An interactive, visual, and real-world guide to fundamental search algorithms. Explore live array scans, graph traversals, pathfinding heuristics, string matching, and hash table indexing.
                 </p>
