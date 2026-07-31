@@ -11,10 +11,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kmstech.co';
 export const metadata: Metadata = {
     title: 'All Search Algorithms Masterclass | KMS Tech',
     description:
-        'Explore an interactive, visual computer science guide to 13 fundamental search algorithms. Features live step-by-step visualizers, real-world industry use cases, time/space complexity analysis, and interactive animations.',
+        'Explore an interactive, visual guide to 13 fundamental search algorithms. Features live step-by-step visualizers, real-world industry use cases, time/space complexity analysis, and interactive animations.',
     keywords: [
         'search algorithms',
-        'computer science algorithms',
+        'algorithms',
         'binary search visualizer',
         'breadth first search',
         'depth first search',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'All Search Algorithms Masterclass: Interactive Visualizer & Use Cases | KMS Tech',
         description:
-            'An interactive visual computer science guide covering 13 search algorithms across sequential, interval, graph, pathfinding, string, and hash table categories.',
+            'An interactive visual guide covering 13 search algorithms across sequential, interval, graph, pathfinding, string, and hash table categories.',
         url: `${SITE_URL}/all-search-algorithms`,
         siteName: 'KMS Tech',
         type: 'website',
@@ -58,7 +58,7 @@ export default function AllSearchAlgorithmsPage() {
         '@type': 'TechArticle',
         headline: 'All Search Algorithms Masterclass: Interactive Visualizer & Industry Use Cases',
         description:
-            'Comprehensive interactive computer science guide featuring step-by-step visualizers, time/space complexity analysis, and real-world software architecture applications for 13 fundamental search algorithms.',
+            'Comprehensive interactive guide featuring step-by-step visualizers, time/space complexity analysis, and real-world software architecture applications for 13 fundamental search algorithms.',
         image: `${SITE_URL}/og-images/all-search-algorithms.gif`,
         author: {
             '@type': 'Organization',
@@ -74,7 +74,7 @@ export default function AllSearchAlgorithmsPage() {
             },
         },
         mainEntityOfPage: `${SITE_URL}/all-search-algorithms`,
-        educationalUse: 'Interactive Computer Science Learning Suite',
+        educationalUse: 'Interactive Learning Suite',
     };
 
     return (
@@ -89,7 +89,7 @@ export default function AllSearchAlgorithmsPage() {
             <header className={styles.heroSection}>
                 <h1 className={styles.heroTitle}>All Search Algorithms Masterclass</h1>
                 <p className={styles.heroSubtitle}>
-                    An interactive, visual, and real-world computer science guide to fundamental search algorithms. Explore live array scans, graph traversals, pathfinding heuristics, string matching, and hash table indexing.
+                    An interactive, visual, and real-world guide to fundamental search algorithms. Explore live array scans, graph traversals, pathfinding heuristics, string matching, and hash table indexing.
                 </p>
             </header>
 
