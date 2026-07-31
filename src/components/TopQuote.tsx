@@ -6,8 +6,6 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 export const TopQuote = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const glowRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
   const quoteLines = [
     "God, His angels and all those in heavens and on earth,",
@@ -18,10 +16,11 @@ export const TopQuote = () => {
   const attribution = "~ (Holy Prophet, The Merciful SAW)";
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const lines = lineRefs.current.filter(Boolean);
-    const glows = glowRefs.current.filter(Boolean);
+    const lines = Array.from(container.querySelectorAll('.quote-line-wrapper'));
+    const glows = Array.from(container.querySelectorAll('.glow-layer'));
 
     // Initial state for entrance animation
     gsap.set(lines, {
@@ -47,7 +46,7 @@ export const TopQuote = () => {
     });
 
     // Subtle floating movement for the container
-    gsap.to(containerRef.current, {
+    gsap.to(container, {
       y: -10,
       duration: 4,
       repeat: -1,
@@ -60,26 +59,14 @@ export const TopQuote = () => {
       tl.kill();
       gsap.killTweensOf(lines);
       gsap.killTweensOf(glows);
-      gsap.killTweensOf(containerRef.current);
+      gsap.killTweensOf(container);
     };
   }, []);
-
-  const addToLineRefs = (el: HTMLDivElement | null) => {
-    if (el && !lineRefs.current.includes(el)) {
-      lineRefs.current.push(el);
-    }
-  };
-
-  const addToGlowRefs = (el: HTMLParagraphElement | null) => {
-    if (el && !glowRefs.current.includes(el)) {
-      glowRefs.current.push(el);
-    }
-  };
 
   return (
     <div ref={containerRef} className="top-quote-container">
       {quoteLines.map((text, index) => (
-        <div key={index} ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative' }}>
+        <div key={index} className="quote-line-wrapper" style={{ position: 'relative' }}>
           {/* Base Layer - Always visible, low glow */}
           <p className="top-quote-text base-layer">
             {index === 0 && <RiDoubleQuotesL style={{ marginRight: '3px', verticalAlign: 'top' }} />}
@@ -88,7 +75,7 @@ export const TopQuote = () => {
           </p>
 
           {/* Glow Layer - Animates opacity, high glow */}
-          <p ref={addToGlowRefs} className="top-quote-text glow-layer" aria-hidden="true">
+          <p className="top-quote-text glow-layer" aria-hidden="true">
             {index === 0 && <RiDoubleQuotesL style={{ marginRight: '3px', verticalAlign: 'top' }} />}
             {text}
             {index === quoteLines.length - 1 && <RiDoubleQuotesR style={{ marginLeft: '3px', verticalAlign: 'top' }} />}
@@ -96,9 +83,9 @@ export const TopQuote = () => {
         </div>
       ))}
 
-      <div ref={addToLineRefs} className="quote-line-wrapper" style={{ position: 'relative', textAlign: 'right', marginTop: '4px' }}>
+      <div className="quote-line-wrapper" style={{ position: 'relative', textAlign: 'right', marginTop: '4px' }}>
         <p className="top-quote-text attribution base-layer">{attribution}</p>
-        <p ref={addToGlowRefs} className="top-quote-text attribution glow-layer" aria-hidden="true">{attribution}</p>
+        <p className="top-quote-text attribution glow-layer" aria-hidden="true">{attribution}</p>
       </div>
     </div>
   );
