@@ -1,0 +1,1093 @@
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                           26.5.0   took  28ms  22:24:37 
+~\Documents\GitHub\kmstech-next ❯ git status
+On branch upggrade/packages-deps
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .npmrc
+        new file:   SearchAlgo.md
+        new file:   error.log
+        modified:   package.json
+        modified:   package_upgrade_plan.md
+        modified:   pnpm-lock.yaml
+        new file:   pnpm-workspace.yaml
+        new file:   public/og-images/all-search-algorithms.gif
+        new file:   src/app/(blog)/all-search-algorithms/page.tsx
+        modified:   src/app/globals.css
+        modified:   src/components/__tests__/BlogFooter.test.tsx
+        modified:   src/components/blog/BlogFooter.tsx
+        modified:   src/components/blog/blog.module.css
+        new file:   src/components/search-algo/AlgorithmSection.tsx
+        new file:   src/components/search-algo/SearchAlgoFooter.tsx
+        new file:   src/components/search-algo/SearchAlgoTOC.tsx
+        new file:   src/components/search-algo/__tests__/SearchAlgo.test.tsx
+        new file:   src/components/search-algo/algorithmsData.ts
+        new file:   src/components/search-algo/search-algo.module.css
+        new file:   src/components/search-algo/usecases/UseCaseSimulator.tsx
+        new file:   src/components/search-algo/visualizers/ArraySearchVisualizer.tsx
+        new file:   src/components/search-algo/visualizers/GraphSearchVisualizer.tsx
+        new file:   src/components/search-algo/visualizers/HashTableVisualizer.tsx
+        new file:   src/components/search-algo/visualizers/PathfindingVisualizer.tsx
+        new file:   src/components/search-algo/visualizers/StringSearchVisualizer.tsx
+        modified:   src/data/og-map.json
+
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                          26.5.0   took  165ms  22:24:41 
+~\Documents\GitHub\kmstech-next ❯ git add .
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                          26.5.0   took  149ms  22:24:45 
+~\Documents\GitHub\kmstech-next ❯ git commit -m "feat(search-algo): add interactive search algorithms masterclass page with sticky TOC, visualizers & full SEO optimization"
+$ jest
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ PASS  src/components/__tests__/ShareLinks.test.tsx
+ PASS  src/components/__tests__/BlogFooter.test.tsx
+ PASS  src/components/__tests__/Concerns.test.tsx
+ PASS  src/components/__tests__/TopQuote.test.tsx
+ PASS  src/components/__tests__/About.test.tsx
+ PASS  src/components/__tests__/BlogContent.test.tsx
+ PASS  src/components/__tests__/Modal.test.tsx
+ PASS  src/components/__tests__/MainLogo.test.tsx
+ PASS  src/components/__tests__/Services.test.tsx
+ PASS  src/hooks/__tests__/useViewCounter.test.ts
+ PASS  src/components/__tests__/Blog.test.tsx
+ PASS  src/components/__tests__/ViewCountLabel.test.tsx
+ PASS  src/components/__tests__/SVGLayer.test.tsx
+ PASS  src/components/__tests__/CodeBlock.test.tsx (5.123 s)
+ PASS  src/components/__tests__/OfflineIndicator.test.tsx (5.045 s)
+ PASS  src/components/__tests__/Tagline.test.tsx
+ PASS  src/components/__tests__/Contact.test.tsx
+ PASS  src/components/__tests__/TransitionLink.test.tsx (5.198 s)
+ PASS  src/components/__tests__/WorkflowStep.test.tsx (5.107 s)
+ PASS  src/components/__tests__/ServiceCard.test.tsx (5.099 s)
+ PASS  src/components/__tests__/BlogHeader.test.tsx
+ PASS  src/components/search-algo/__tests__/SearchAlgo.test.tsx
+ PASS  src/components/__tests__/Pagination.test.tsx (5.391 s)
+ PASS  src/components/__tests__/BlogCard.test.tsx (6.322 s)
+------------------------------------|---------|----------|---------|---------|--------------------------------------------------------------------
+File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------------------------|---------|----------|---------|---------|--------------------------------------------------------------------
+All files                           |   52.26 |    40.34 |   66.66 |   52.57 |
+ components                         |   98.29 |    86.36 |     100 |     100 |
+  About.tsx                         |     100 |      100 |     100 |     100 |
+  Blog.tsx                          |     100 |      100 |     100 |     100 |
+  Concerns.tsx                      |     100 |      100 |     100 |     100 |
+  Contact.tsx                       |     100 |      100 |     100 |     100 |
+  MainLogo.tsx                      |   96.87 |       75 |     100 |     100 | 16-20
+  Modal.tsx                         |     100 |       90 |     100 |     100 | 29
+  OfflineIndicator.tsx              |     100 |      100 |     100 |     100 |
+  SVGLayer.tsx                      |     100 |       50 |     100 |     100 | 12
+  ServiceCard.tsx                   |     100 |      100 |     100 |     100 |
+  Services.tsx                      |     100 |      100 |     100 |     100 |
+  Tagline.tsx                       |   94.11 |       75 |     100 |     100 | 20
+  TopQuote.tsx                      |   96.87 |    92.85 |     100 |     100 | 21
+  TransitionLink.tsx                |     100 |      100 |     100 |     100 |
+  WorkflowStep.tsx                  |     100 |      100 |     100 |     100 |
+ components/blog                    |   95.95 |    81.48 |   90.47 |   96.87 |
+  BlogCard.tsx                      |     100 |    83.33 |     100 |     100 | 69
+  BlogContent.tsx                   |      75 |       20 |      50 |      75 | 24-27
+  BlogFooter.tsx                    |     100 |      100 |     100 |     100 |
+  BlogHeader.tsx                    |     100 |      100 |     100 |     100 |
+  CodeBlock.tsx                     |     100 |       90 |     100 |     100 | 39
+  Pagination.tsx                    |     100 |      100 |     100 |     100 |
+  ShareLinks.tsx                    |   93.75 |      100 |   85.71 |     100 |
+  ViewCountLabel.tsx                |     100 |      100 |     100 |     100 |
+ components/search-algo             |   77.77 |    57.69 |   77.77 |      80 |
+  AlgorithmSection.tsx              |   94.11 |    66.66 |     100 |   94.11 | 31
+  SearchAlgoFooter.tsx              |     100 |      100 |     100 |     100 |
+  SearchAlgoTOC.tsx                 |   57.14 |       50 |   63.63 |   61.29 | 16-35,42-45
+  algorithmsData.ts                 |     100 |      100 |     100 |     100 |
+ components/search-algo/usecases    |     100 |        0 |     100 |     100 |
+  UseCaseSimulator.tsx              |     100 |        0 |     100 |     100 | 15
+ components/search-algo/visualizers |   26.95 |    26.48 |   33.33 |   27.64 |
+  ArraySearchVisualizer.tsx         |   30.14 |     37.5 |      40 |   30.54 | 67-415,432-436,440,469-470,475-476,501-502,506,508,510,512,553-588
+  GraphSearchVisualizer.tsx         |    6.66 |        0 |       0 |    7.07 | 57-332
+  HashTableVisualizer.tsx           |    90.9 |    73.33 |   85.71 |   93.54 | 61,128
+  PathfindingVisualizer.tsx         |    5.33 |        0 |       0 |    5.97 | 30-315
+  StringSearchVisualizer.tsx        |   60.25 |    63.46 |   78.57 |   59.72 | 76-125,222,245
+------------------------------------|---------|----------|---------|---------|--------------------------------------------------------------------
+Jest: "global" coverage threshold for statements (80%) not met: 52.26%
+Jest: "global" coverage threshold for branches (80%) not met: 40.34%
+Jest: "global" coverage threshold for lines (80%) not met: 52.57%
+Jest: "global" coverage threshold for functions (80%) not met: 66.66%
+
+Test Suites: 24 passed, 24 total
+Tests:       94 passed, 94 total
+Snapshots:   0 total
+Time:        14.733 s, estimated 26 s
+Ran all test suites.
+[ELIFECYCLE] Test failed. See above for more details.
+husky - pre-commit script failed (code 1)
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                        26.5.0   took  21.137s  22:25:20 
+~\Documents\GitHub\kmstech-next ❯ git commit -m "feat(search-algo): add interactive search algorithms masterclass page with sticky TOC, visualizers & full SEO optimization"
+$ jest
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  ~1 |  +18 ~8                                                                  26.5.0   took  4.166s  22:26:29 
+~\Documents\GitHub\kmstech-next ❯ git add .
+warning: in the working copy of 'src/components/search-algo/__tests__/SearchAlgo.test.tsx', LF will be replaced by CRLF the next time Git touches it
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                          26.5.0   took  121ms  22:26:33 
+~\Documents\GitHub\kmstech-next ❯ git commit -m "feat(search-algo): add interactive search algorithms masterclass page with sticky TOC, visualizers & full SEO optimization"
+$ jest
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ PASS  src/components/__tests__/About.test.tsx
+ PASS  src/components/__tests__/OfflineIndicator.test.tsx
+ PASS  src/components/__tests__/MainLogo.test.tsx
+ PASS  src/components/__tests__/Tagline.test.tsx
+ PASS  src/components/__tests__/Pagination.test.tsx
+ PASS  src/components/__tests__/ServiceCard.test.tsx
+ PASS  src/components/__tests__/CodeBlock.test.tsx
+ PASS  src/components/__tests__/ShareLinks.test.tsx
+ PASS  src/components/__tests__/Concerns.test.tsx
+ PASS  src/components/__tests__/BlogFooter.test.tsx
+ PASS  src/components/__tests__/SVGLayer.test.tsx
+ PASS  src/components/__tests__/Services.test.tsx (5.124 s)
+ PASS  src/components/__tests__/Modal.test.tsx
+ PASS  src/hooks/__tests__/useViewCounter.test.ts
+ PASS  src/components/__tests__/Blog.test.tsx (5.278 s)
+ PASS  src/components/__tests__/TopQuote.test.tsx (5.281 s)
+ PASS  src/components/__tests__/Contact.test.tsx (5.06 s)
+ PASS  src/components/__tests__/BlogContent.test.tsx (5.271 s)
+ PASS  src/components/__tests__/ViewCountLabel.test.tsx (5.278 s)
+ PASS  src/components/__tests__/TransitionLink.test.tsx (5.205 s)
+ PASS  src/components/__tests__/WorkflowStep.test.tsx (5.269 s)
+ PASS  src/components/__tests__/BlogCard.test.tsx (5.97 s)
+ PASS  src/components/__tests__/BlogHeader.test.tsx
+ FAIL  src/components/search-algo/__tests__/SearchAlgo.test.tsx
+  ● Search Algorithms Masterclass Component Suite › interactive controls in ArraySearchVisualizer (Linear, Binary, Jump, Interpolation, Exponential, Ternary)
+
+    TypeError: arrayData is not iterable (cannot read property undefined)
+
+      477 |     };
+      478 |
+    > 479 |     const maxValue = Math.max(...arrayData);
+          |                           ^
+      480 |
+      481 |     return (
+      482 |         <div className={styles.visualizerWidget}>
+
+      at max (src/components/search-algo/visualizers/ArraySearchVisualizer.tsx:479:27)
+      at Object.react_stack_bottom_frame (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:25904:20)
+      at renderWithHooks (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:7662:22)
+      at updateFunctionComponent (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:10166:19)
+      at beginWork (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:11778:18)
+      at runWithFiberInDEV (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (node_modules/.pnpm/react@19.2.1/node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/.pnpm/react@19.2.1/node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/pure.js:291:10)
+      at src/components/search-algo/__tests__/SearchAlgo.test.tsx:75:39
+          at Array.forEach (<anonymous>)
+      at Object.forEach (src/components/search-algo/__tests__/SearchAlgo.test.tsx:74:20)
+
+  ● Search Algorithms Masterclass Component Suite › interactive controls in GraphSearchVisualizer (BFS & DFS)
+
+    TestingLibraryElementError: Unable to find an element with the text: Reset Graph. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="visualizerWidget"
+        >
+          <div
+            class="visualizerTitle"
+          >
+            Graph Canvas (
+            Level-Order Queue BFS
+            )
+          </div>
+          <div
+            class="graphStage"
+          >
+            <svg
+              height="230"
+              viewBox="0 0 440 230"
+              width="440"
+            >
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="220"
+                x2="120"
+                y1="40"
+                y2="110"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="220"
+                x2="320"
+                y1="40"
+                y2="110"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="120"
+                x2="60"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="120"
+                x2="180"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="320"
+                x2="260"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="320"
+                x2="380"
+                y1="110"
+                y2="180"
+              />
+              <g>
+                <circle
+                  cx="220"
+                  cy="40"
+                  fill="#009444"
+                  id="graph-node-A"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="220"
+                  y="45"
+                >
+                  A
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="120"
+                  cy="110"
+                  fill="#009444"
+                  id="graph-node-B"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="120"
+                  y="115"
+                >
+                  B
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="320"
+                  cy="110"
+                  fill="#009444"
+                  id="graph-node-C"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="320"
+                  y="115"
+                >
+                  C
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="60"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-D"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="60"
+                  y="185"
+                >
+                  D
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="180"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-E"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="180"
+                  y="185"
+                >
+                  E
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="260"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-F"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="260"
+                  y="185"
+                >
+                  F
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="380"
+                  cy="180"
+                  fill="#00ff75"
+                  id="graph-node-G"
+                  r="22"
+                  stroke="#ffffff"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#000000"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="380"
+                  y="185"
+                >
+                  G
+                </text>
+              </g>
+            </svg>
+          </div>
+          <div
+            class="statusText"
+          >
+            💡
+            Target node G found via BFS!
+          </div>
+          <div
+            class="controlPanel"
+          >
+            <div
+              class="controlButtons"
+            >
+              <button
+                class="ctrlBtn"
+              >
+                <svg
+                  class="lucide lucide-play"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="6 3 20 12 6 21 6 3"
+                  />
+                </svg>
+                Play
+              </button>
+              <button
+                class="ctrlBtn"
+                disabled=""
+              >
+                <svg
+                  class="lucide lucide-skip-forward"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="5 4 15 12 5 20 5 4"
+                  />
+                  <line
+                    x1="19"
+                    x2="19"
+                    y1="5"
+                    y2="19"
+                  />
+                </svg>
+                Next Step
+              </button>
+              <button
+                class="ctrlBtn"
+              >
+                <svg
+                  class="lucide lucide-rotate-ccw"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                  />
+                  <path
+                    d="M3 3v5h5"
+                  />
+                </svg>
+                Reset
+              </button>
+            </div>
+            <div
+              class="inputGroup"
+            >
+              <span
+                class="inputLabel"
+              >
+                Target Node:
+              </span>
+              <select
+                class="targetInput"
+                style="width: 60px;"
+              >
+                <option
+                  value="A"
+                >
+                  A
+                </option>
+                <option
+                  value="B"
+                >
+                  B
+                </option>
+                <option
+                  value="C"
+                >
+                  C
+                </option>
+                <option
+                  value="D"
+                >
+                  D
+                </option>
+                <option
+                  value="E"
+                >
+                  E
+                </option>
+                <option
+                  value="F"
+                >
+                  F
+                </option>
+                <option
+                  value="G"
+                >
+                  G
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      119 |             });
+      120 |
+    > 121 |             fireEvent.click(screen.getByText('Reset Graph'));
+          |                                    ^
+      122 |             unmount();
+      123 |         });
+      124 |     });
+
+      at Object.getElementError (node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at getByText (src/components/search-algo/__tests__/SearchAlgo.test.tsx:121:36)
+          at Array.forEach (<anonymous>)
+      at Object.forEach (src/components/search-algo/__tests__/SearchAlgo.test.tsx:107:56)
+
+------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------------------------
+File                                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------------------------
+All files                           |   91.05 |    84.38 |    89.1 |   92.05 |
+ components                         |   98.29 |    86.36 |     100 |     100 |
+  About.tsx                         |     100 |      100 |     100 |     100 |
+  Blog.tsx                          |     100 |      100 |     100 |     100 |
+  Concerns.tsx                      |     100 |      100 |     100 |     100 |
+  Contact.tsx                       |     100 |      100 |     100 |     100 |
+  MainLogo.tsx                      |   96.87 |       75 |     100 |     100 | 16-20
+  Modal.tsx                         |     100 |       90 |     100 |     100 | 29
+  OfflineIndicator.tsx              |     100 |      100 |     100 |     100 |
+  SVGLayer.tsx                      |     100 |       50 |     100 |     100 | 12
+  ServiceCard.tsx                   |     100 |      100 |     100 |     100 |
+  Services.tsx                      |     100 |      100 |     100 |     100 |
+  Tagline.tsx                       |   94.11 |       75 |     100 |     100 | 20
+  TopQuote.tsx                      |   96.87 |    92.85 |     100 |     100 | 21
+  TransitionLink.tsx                |     100 |      100 |     100 |     100 |
+  WorkflowStep.tsx                  |     100 |      100 |     100 |     100 |
+ components/blog                    |   95.95 |    81.48 |   90.47 |   96.87 |
+  BlogCard.tsx                      |     100 |    83.33 |     100 |     100 | 69
+  BlogContent.tsx                   |      75 |       20 |      50 |      75 | 24-27
+  BlogFooter.tsx                    |     100 |      100 |     100 |     100 |
+  BlogHeader.tsx                    |     100 |      100 |     100 |     100 |
+  CodeBlock.tsx                     |     100 |       90 |     100 |     100 | 39
+  Pagination.tsx                    |     100 |      100 |     100 |     100 |
+  ShareLinks.tsx                    |   93.75 |      100 |   85.71 |     100 |
+  ViewCountLabel.tsx                |     100 |      100 |     100 |     100 |
+ components/search-algo             |   77.77 |    65.38 |   77.77 |      80 |
+  AlgorithmSection.tsx              |   94.11 |    83.33 |     100 |   94.11 | 31
+  SearchAlgoFooter.tsx              |     100 |      100 |     100 |     100 |
+  SearchAlgoTOC.tsx                 |   57.14 |       50 |   63.63 |   61.29 | 16-35,42-45
+  algorithmsData.ts                 |     100 |      100 |     100 |     100 |
+ components/search-algo/usecases    |     100 |      100 |     100 |     100 |
+  UseCaseSimulator.tsx              |     100 |      100 |     100 |     100 |
+ components/search-algo/visualizers |   89.56 |    86.01 |   84.05 |   90.35 |
+  ArraySearchVisualizer.tsx         |   78.46 |    74.16 |   46.66 |   79.31 | ...-220,233-242,258,291-301,347-358,361-372,388-398,432-436,440,469-470,475-476,512,553-588
+  GraphSearchVisualizer.tsx         |   93.33 |    88.88 |   82.35 |   93.93 | 115,159,178,314-329
+  HashTableVisualizer.tsx           |   96.96 |    93.33 |     100 |     100 | 51
+  PathfindingVisualizer.tsx         |      96 |    91.86 |     100 |   97.01 | 127-129,239
+  StringSearchVisualizer.tsx        |   98.71 |    98.07 |     100 |     100 | 45
+------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------------------------------------
+Summary of all failing tests
+ FAIL  src/components/search-algo/__tests__/SearchAlgo.test.tsx
+  ● Search Algorithms Masterclass Component Suite › interactive controls in ArraySearchVisualizer (Linear, Binary, Jump, Interpolation, Exponential, Ternary)
+
+    TypeError: arrayData is not iterable (cannot read property undefined)
+
+      477 |     };
+      478 |
+    > 479 |     const maxValue = Math.max(...arrayData);
+          |                           ^
+      480 |
+      481 |     return (
+      482 |         <div className={styles.visualizerWidget}>
+
+      at max (src/components/search-algo/visualizers/ArraySearchVisualizer.tsx:479:27)
+      at Object.react_stack_bottom_frame (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:25904:20)
+      at renderWithHooks (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:7662:22)
+      at updateFunctionComponent (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:10166:19)
+      at beginWork (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:11778:18)
+      at runWithFiberInDEV (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at performUnitOfWork (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17641:22)
+      at workLoopSync (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17469:41)
+      at renderRootSync (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:17450:11)
+      at performWorkOnRoot (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:16583:35)
+      at performWorkOnRootViaSchedulerTask (node_modules/.pnpm/react-dom@19.2.1_react@19.2.1/node_modules/react-dom/cjs/react-dom-client.development.js:18957:7)
+      at flushActQueue (node_modules/.pnpm/react@19.2.1/node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/.pnpm/react@19.2.1/node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/act-compat.js:46:25
+      at renderRoot (node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/pure.js:189:26)
+      at render (node_modules/.pnpm/@testing-library+react@16.3_332193c3451a7598908f73ec7d072a7c/node_modules/@testing-library/react/dist/pure.js:291:10)
+      at src/components/search-algo/__tests__/SearchAlgo.test.tsx:75:39
+          at Array.forEach (<anonymous>)
+      at Object.forEach (src/components/search-algo/__tests__/SearchAlgo.test.tsx:74:20)
+
+  ● Search Algorithms Masterclass Component Suite › interactive controls in GraphSearchVisualizer (BFS & DFS)
+
+    TestingLibraryElementError: Unable to find an element with the text: Reset Graph. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="visualizerWidget"
+        >
+          <div
+            class="visualizerTitle"
+          >
+            Graph Canvas (
+            Level-Order Queue BFS
+            )
+          </div>
+          <div
+            class="graphStage"
+          >
+            <svg
+              height="230"
+              viewBox="0 0 440 230"
+              width="440"
+            >
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="220"
+                x2="120"
+                y1="40"
+                y2="110"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="220"
+                x2="320"
+                y1="40"
+                y2="110"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="120"
+                x2="60"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="120"
+                x2="180"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="320"
+                x2="260"
+                y1="110"
+                y2="180"
+              />
+              <line
+                stroke="#00ff75"
+                stroke-dasharray="none"
+                stroke-width="3"
+                x1="320"
+                x2="380"
+                y1="110"
+                y2="180"
+              />
+              <g>
+                <circle
+                  cx="220"
+                  cy="40"
+                  fill="#009444"
+                  id="graph-node-A"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="220"
+                  y="45"
+                >
+                  A
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="120"
+                  cy="110"
+                  fill="#009444"
+                  id="graph-node-B"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="120"
+                  y="115"
+                >
+                  B
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="320"
+                  cy="110"
+                  fill="#009444"
+                  id="graph-node-C"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="320"
+                  y="115"
+                >
+                  C
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="60"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-D"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="60"
+                  y="185"
+                >
+                  D
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="180"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-E"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="180"
+                  y="185"
+                >
+                  E
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="260"
+                  cy="180"
+                  fill="#009444"
+                  id="graph-node-F"
+                  r="22"
+                  stroke="#00ff75"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#ffffff"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="260"
+                  y="185"
+                >
+                  F
+                </text>
+              </g>
+              <g>
+                <circle
+                  cx="380"
+                  cy="180"
+                  fill="#00ff75"
+                  id="graph-node-G"
+                  r="22"
+                  stroke="#ffffff"
+                  stroke-width="3"
+                />
+                <text
+                  fill="#000000"
+                  font-family="var(--font-geist-mono)"
+                  font-size="14"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  x="380"
+                  y="185"
+                >
+                  G
+                </text>
+              </g>
+            </svg>
+          </div>
+          <div
+            class="statusText"
+          >
+              
+            Target node G found via BFS!
+          </div>
+          <div
+            class="controlPanel"
+          >
+            <div
+              class="controlButtons"
+            >
+              <button
+                class="ctrlBtn"
+              >
+                <svg
+                  class="lucide lucide-play"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="6 3 20 12 6 21 6 3"
+                  />
+                </svg>
+                Play
+              </button>
+              <button
+                class="ctrlBtn"
+                disabled=""
+              >
+                <svg
+                  class="lucide lucide-skip-forward"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="5 4 15 12 5 20 5 4"
+                  />
+                  <line
+                    x1="19"
+                    x2="19"
+                    y1="5"
+                    y2="19"
+                  />
+                </svg>
+                Next Step
+              </button>
+              <button
+                class="ctrlBtn"
+              >
+                <svg
+                  class="lucide lucide-rotate-ccw"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                  />
+                  <path
+                    d="M3 3v5h5"
+                  />
+                </svg>
+                Reset
+              </button>
+            </div>
+            <div
+              class="inputGroup"
+            >
+              <span
+                class="inputLabel"
+              >
+                Target Node:
+              </span>
+              <select
+                class="targetInput"
+                style="width: 60px;"
+              >
+                <option
+                  value="A"
+                >
+                  A
+                </option>
+                <option
+                  value="B"
+                >
+                  B
+                </option>
+                <option
+                  value="C"
+                >
+                  C
+                </option>
+                <option
+                  value="D"
+                >
+                  D
+                </option>
+                <option
+                  value="E"
+                >
+                  E
+                </option>
+                <option
+                  value="F"
+                >
+                  F
+                </option>
+                <option
+                  value="G"
+                >
+                  G
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      119 |             });
+      120 |
+    > 121 |             fireEvent.click(screen.getByText('Reset Graph'));
+          |                                    ^
+      122 |             unmount();
+      123 |         });
+      124 |     });
+
+      at Object.getElementError (node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at getByText (src/components/search-algo/__tests__/SearchAlgo.test.tsx:121:36)
+          at Array.forEach (<anonymous>)
+      at Object.forEach (src/components/search-algo/__tests__/SearchAlgo.test.tsx:107:56)
+
+
+Test Suites: 1 failed, 23 passed, 24 total
+Tests:       2 failed, 95 passed, 97 total
+Snapshots:   0 total
+Time:        16.35 s
+Ran all test suites.
+[ELIFECYCLE] Test failed. See above for more details.
+husky - pre-commit script failed (code 1)
+ mushfiq@KMSThinkPadT4 upggrade/packages-deps ≢  +18 ~8                                                                        26.5.0   took  23.097s  22:26:59 
+~\Documents\GitHub\kmstech-next ❯
