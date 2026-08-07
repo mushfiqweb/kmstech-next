@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import { FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFileContract } from 'react-icons/fa';
+import { trackContactClick } from '@/lib/gtag';
 
 export const Contact = () => {
   return (
@@ -13,6 +16,7 @@ export const Contact = () => {
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp with +880 1711 741 953"
+              onClick={() => trackContactClick('whatsapp')}
             >
               <FaWhatsapp className="icon whatsapp-icon" />
               <p>+880 1711 741 953</p>
@@ -22,6 +26,7 @@ export const Contact = () => {
               href="tel:+8801911256358" 
               className="contact-item"
               aria-label="Call +880 1911 256 358"
+              onClick={() => trackContactClick('phone')}
             >
               <FaPhone className="icon phone-icon" />
               <p>+880 1911 256 358</p>
@@ -31,6 +36,7 @@ export const Contact = () => {
               href="mailto:info@kmstech.co" 
               className="contact-item"
               aria-label="Email info@kmstech.co"
+              onClick={() => trackContactClick('email')}
             >
               <FaEnvelope className="icon email-icon" />
               <p>info@kmstech.co</p>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Atkinson_Hyperlegible } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -127,13 +129,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-N8DS3MQWYX";
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${atkinson.variable}`}>
         {children}
         <Analytics />
         <OfflineIndicator />
+        <CookieConsent />
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   );
 }
